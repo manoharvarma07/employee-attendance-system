@@ -1,0 +1,9 @@
+
+# Generated files to ignore
+*.pdf
+document/
+*.png
+generate_*.py
+DASHBOARD_FIX_SUMMARY.txt
+PROJECT_COMPLETION_SUMMARY.txt
+USAGE_GUIDE.md
