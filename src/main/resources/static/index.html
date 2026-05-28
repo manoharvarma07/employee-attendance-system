@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Attendance System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>🏢 Employee Attendance System</h1>
+        <nav>
+            <button class="nav-btn active" onclick="showTab('dashboard')">Dashboard</button>
+            <button class="nav-btn" onclick="showTab('checkin')">Check In/Out</button>
+            <button class="nav-btn" onclick="showTab('employee')">Add Employee</button>
+            <button class="nav-btn" onclick="showTab('report')">Reports</button>
+        </nav>
+    </div>
+
+    <div class="container">
+        <!-- Dashboard Tab -->
+        <div id="dashboard" class="tab-content active">
+            <div class="card">
+                <h2>📊 Dashboard</h2>
+                <p>Welcome to the Employee Attendance System. Use the navigation above to manage attendance.</p>
+                <div class="stats">
+                    <div class="stat-box">
+                        <h3>Total Employees</h3>
+                        <p id="totalEmployees">0</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Today's Check-ins</h3>
+                        <p id="todayCheckins">0</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Currently Checked In</h3>
+                        <p id="currentlyChecked">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Check In/Out Tab -->
+        <div id="checkin" class="tab-content">
+            <div class="card">
+                <h2>⏱️ Check In / Check Out</h2>
+                <div class="form-group">
+                    <label>Employee ID:</label>
+                    <input type="number" id="employeeId" placeholder="Enter employee ID" min="1">
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-success" onclick="handleCheckIn()">✓ Check In</button>
+                    <button class="btn btn-warning" onclick="handleCheckOut()">✗ Check Out</button>
+                </div>
+                <div id="checkinResult" class="result-message"></div>
+            </div>
+
+            <div class="card">
+                <h2>👁️ View Attendance History</h2>
+                <div class="form-group">
+                    <label>Employee ID:</label>
+                    <input type="number" id="viewEmployeeId" placeholder="Enter employee ID" min="1">
+                </div>
+                <button class="btn btn-primary" onclick="viewAttendance()">View History</button>
+                <div id="attendanceTable"></div>
+            </div>
+        </div>
+
+        <!-- Add Employee Tab -->
+        <div id="employee" class="tab-content">
+            <div class="card">
+                <h2>👤 Add New Employee</h2>
+                <div class="form-group">
+                    <label>Employee ID:</label>
+                    <input type="number" id="newEmpId" placeholder="Enter employee ID" min="1">
+                </div>
+                <div class="form-group">
+                    <label>Employee Name:</label>
+                    <input type="text" id="newEmpName" placeholder="Enter employee name">
+                </div>
+                <button class="btn btn-success" onclick="addEmployee()">Add Employee</button>
+                <div id="employeeResult" class="result-message"></div>
+            </div>
+        </div>
+
+        <!-- Reports Tab -->
+        <div id="report" class="tab-content">
+            <div class="card">
+                <h2>📋 Attendance Report</h2>
+                <div class="form-group">
+                    <label>From Date & Time:</label>
+                    <input type="datetime-local" id="reportFrom">
+                </div>
+                <div class="form-group">
+                    <label>To Date & Time:</label>
+                    <input type="datetime-local" id="reportTo">
+                </div>
+                <button class="btn btn-primary" onclick="generateReport()">Generate Report</button>
+                <div id="reportTable"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Employee Attendance System. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                    EMPLOYEE ATTENDANCE SYSTEM                              ║
+║                        QUICK REFERENCE GUIDE                               ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+🚀 PROJECT IS RUNNING!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📍 WEBSITE: http://localhost:8080
+
+🎯 QUICK START:
+
+  1. Open browser → http://localhost:8080
+  2. Click "Dashboard" to see live statistics
+  3. Use "Add Employee" to register employees
+  4. Use "Check In/Out" to track attendance
+  5. Use "Reports" to generate attendance summaries
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 CURRENT STATUS:
+
+  ✓ Server: Running (Java Process PID: 9129)
+  ✓ Port: 8080
+  ✓ Database: Connected (SQLite)
+  ✓ Web UI: Active
+  ✓ REST API: Online
+  ✓ Test Data: 4 employees loaded
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎨 WEB INTERFACE TABS:
+
+  Dashboard       → View real-time attendance statistics
+  Check In/Out    → Manage employee check-in and check-out
+  Add Employee    → Register new employees
+  Reports         → Generate date-range attendance reports
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚙️ TECHNICAL DETAILS:
+
+  Framework:      Spring Boot 2.7.14
+  Java Version:   21.0.10
+  Database:       SQLite (file: ~/.attendance.db)
+  Frontend:       HTML5 + CSS3 + Vanilla JavaScript
+  API:            RESTful (5 endpoints)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📝 SAMPLE API CALLS:
+
+  Add Employee:
+    curl -X POST http://localhost:8080/api/employee \
+      -H "Content-Type: application/json" \
+      -d '{"id": 5, "name": "John Doe"}'
+
+  Check In:
+    curl -X POST http://localhost:8080/api/checkin \
+      -H "Content-Type: application/json" \
+      -d '{"employeeId": 5}'
+
+  Get Today's Attendance:
+    curl "http://localhost:8080/api/attendance/range?from=2026-05-27T00:00&to=2026-05-28T00:00"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 MANAGEMENT COMMANDS:
+
+  Check if running:
+    ps aux | grep employee-attendance
+
+  View recent logs:
+    tail -50 /tmp/attendance.log
+
+  Stop the application:
+    pkill -f "employee-attendance"
+
+  Rebuild project:
+    cd /home/sri/Desktop/project && mvn clean package
+
+  Start the application:
+    cd /home/sri/Desktop/project && \
+    java -jar target/employee-attendance-0.1.0.jar
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 DASHBOARD STATISTICS:
+
+  Total Employees:      Count of unique employees (from today's records)
+  Today's Check-ins:    Total number of check-in events
+  Currently Checked In: Employees without checkout (still working)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📁 PROJECT LOCATION:
+
+  /home/sri/Desktop/project/
+
+  Key files:
+  - target/employee-attendance-0.1.0.jar  → Runnable application
+  - pom.xml                                → Maven dependencies
+  - README.md                              → Quick start
+  - USAGE_GUIDE.md                         → Detailed instructions
+  - src/main/java/                         → Backend code
+  - src/main/resources/static/             → Frontend files
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✨ KEY FEATURES:
+
+  ✓ Real-time employee check-in/check-out
+  ✓ Persistent database storage (SQLite)
+  ✓ Beautiful responsive web interface
+  ✓ Live dashboard with statistics
+  ✓ Date-range attendance reports
+  ✓ RESTful API for integration
+  ✓ Employee management system
+  ✓ Work duration calculation
+  ✓ Cross-browser compatible
+  ✓ No external dependencies for frontend
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❓ TROUBLESHOOTING:
+
+  Port 8080 already in use?
+    pkill -f "java -jar"
+
+  Database not found?
+    It will be created automatically on first run
+
+  Dashboard showing 0?
+    Make sure you're viewing today's data in Reports tab
+
+  Can't access the web interface?
+    Check if server is running: ps aux | grep java
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎉 Ready to use! Open http://localhost:8080 in your browser
+
+════════════════════════════════════════════════════════════════════════════
